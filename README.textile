@@ -12,15 +12,15 @@ h1. Features
 
 h1. Coming Soon
 
-* Clickable insert into Textile based pages
+Clickable insert into Textile based pages
 
 h1. Justification
 
-* I started my search by looking for available upload extensions for Radiant CMS. The most popular one I found was Paperclipped. After some trail runs with Paperclipped I wasn’t satisfied. I found that it was trying to be too smart for my good. I think my clients need something simple. They just want the ability to upload files and reference them in their web pages. To me that sounds like an web based scp/ftp application. This extension is the first step in that direction.
+I started my search by looking for available upload extensions for Radiant CMS. The most popular one I found was Paperclipped. After some trail runs with Paperclipped I wasn’t satisfied. I found that it was trying to be too smart for my good. I think my clients need something simple. They just want the ability to upload files and reference them in their web pages. To me that sounds like an web based scp/ftp application. This extension is the first step in that direction.
 
 h1. What’s next?
 
-* I will be adding more features as the needs come in. Currently, there isn’t any exception handling. You must create “public/upload” folder or the extension will not start. But other than those two items, it works perfectly.
+I will be adding more features as the needs come in. Currently, there isn’t any exception handling. You must create “public/upload” folder or the extension will not start. But other than those two items, it works perfectly.
 
 h1. Getting Started
 
@@ -31,4 +31,4 @@ h1. Getting Started
 
 h1. Support
 
-* If you have any ideas or change requests please send me an email at buddy [at] buddylee [dot] org and I’ll be happy to update the source code.
+If you have any ideas or change requests please send me an email at buddy [at] buddylee [dot] org and I’ll be happy to update the source code.
