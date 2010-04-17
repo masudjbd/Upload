@@ -1,0 +1,32 @@
+%h3 Upload new files
+%form{:action=>"/admin/files/upload",:method=>"post",:enctype=>"multipart/form-data"}
+  %input{ :type => "file", :name => "file" }
+  %input{:type=>"submit",:value=>"Upload"}
+%hr{ 'border' => 'none', 'height' => '1px', 'background' => '#000' }
+%h3 Uploaded files
+%table{"cellpadding" => "4", "width" => "100%"}
+  %tr
+    %th{"style" => "text-align: left;"}
+      Filename
+    %th
+      Created Date
+    %th
+      Options
+  - col = 0
+  - @files.each do |f|
+    - col += 1
+    %tr
+      - if (col%2 == 1)
+        %td{"style" => "background-color:#EBECED;"}
+          %a{ "href" => "/upload/#{f.filename}" }= f.filename
+        %td{"style" => "text-align:center; background-color:#EBECED;"}
+          = f.file.mtime.strftime("%Y-%m-%d")
+        %td{"style" => "text-align:center; background-color:#EBECED;"}
+          %a{ "href" => "/admin/files/delete?file=#{f.filename}" } delete
+      - else
+        %td{"style" => "background-color:#A4CDED;"}
+          %a{ "href" => "/upload/#{f.filename}" }= f.filename
+        %td{"style" => "text-align:center; background-color:#A4CDED;"}
+          = f.file.mtime.strftime("%Y-%m-%d")
+        %td{"style" => "text-align:center; background-color:#A4CDED;"}
+          %a{ "href" => "/admin/files/delete?file=#{f.filename}" } delete
