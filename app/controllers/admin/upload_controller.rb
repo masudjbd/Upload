@@ -4,18 +4,18 @@ class Admin::UploadController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
-    @files = DataFile.find
+    @files = UploadFile.find(:all)
   end
   
   def upload
     @file = params[:file]
     @filename = params[:file].original_filename
-    post = DataFile.create(@file)
+    post = UploadFile.create(@file)
     redirect_to :action => "index"
   end
   
   def delete
-    f = DataFile.find(params[:file])
+    f = UploadFile.find(params[:file])
     f[0].delete
     redirect_to :action => "index"
   end
