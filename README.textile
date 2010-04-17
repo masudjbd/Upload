@@ -1,6 +1,6 @@
 h1. Website
 
-"Visit Radiant CMS Upload File Manager Website.":http://buddylee.org/blog/new-radiant-extension-upload/
+"Visit Upload Website.":http://buddylee.org/blog/new-radiant-extension-upload/
 
 h1. Features
 
