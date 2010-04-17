@@ -11,7 +11,8 @@ class UploadFile < ActiveRecord::Base
     self.filename = File.basename(self.file.path)
   end
   
-  def self.find(pattern="")
+  def self.find(pattern)
+    if pattern == :all then pattern = "" # to follow how other ruby libs work
     files = self.cleanup_files(Dir.new(@@directory).entries)
     files = self.filter_files(files, pattern)
     upload_files = []
