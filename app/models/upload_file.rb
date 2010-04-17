@@ -1,10 +1,12 @@
+require "FileUtils"
+
 class UploadFile < ActiveRecord::Base
 
   @@directory = "public/upload"
   attr_accessor :file, :filename
 
-  def initialize(filename="", directory=@@directory)
-    path = File.join(directory, filename)
+  def initialize(filename="")
+    path = File.join(@@directory, filename)
     self.file = File.new(path, "r+")
     self.filename = File.basename(self.file.path)
   end
@@ -12,20 +14,19 @@ class UploadFile < ActiveRecord::Base
   def self.find(pattern="")
     files = self.cleanup_files(Dir.new(@@directory).entries)
     files = self.filter_files(files, pattern)
-    dataFiles = []
+    upload_files = []
     files.each do |f|
-      dataFiles.push(DataFile.new(f))
+      upload_files.push(UploadFile.new(f))
     end
-    return dataFiles
+    return upload_files
   end
   
-  def self.create(file, directory=@@directory)
-    # create directory if it doesn't exist
-    # if it does continue uploading the files
+  def self.create(file)
+    FileUtils.mkdir_p 'public/upload'
     filename = file.original_filename.gsub(" ", "_")
-    path = File.join(directory, filename)
+    path = File.join(@@directory, filename)
     File.open(path, "w+") { |f| f.write(file.read) }
-    return DataFile.new(filename)
+    return UploadFile.new(filename)
   end
   
   def delete
@@ -37,10 +38,10 @@ class UploadFile < ActiveRecord::Base
     end
   end
   
-  def self.cleanup_files(filesArray)
-    filesArray.delete(".")
-    filesArray.delete("..")
-    return files
+  def self.cleanup_files(files_array)
+    files_array.delete(".")
+    files_array.delete("..")
+    return files_array
   end
   
   def self.filter_files(files, pattern)
