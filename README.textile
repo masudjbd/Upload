@@ -2,6 +2,10 @@ h1. Website
 
 "Visit Upload Website.":http://buddylee.org/blog/new-radiant-extension-upload/
 
+h1. Justification
+
+I started my search by looking for available upload extensions for Radiant CMS. The most popular one I found was Paperclipped. After some trail runs with Paperclipped I wasn’t satisfied. I found that it was trying to be too smart for my good. I think my clients need something simple. They just want the ability to upload files and reference them in their web pages. To me that sounds like an web based scp/ftp application. This extension is the first step in that direction.
+
 h1. Features
 
 * Ability to upload binary file (images, pdf, etc.)
@@ -13,10 +17,6 @@ h1. Features
 h1. Features coming soon
 
 * Clickable insert into Textile based pages
-
-h1. Justification
-
-I started my search by looking for available upload extensions for Radiant CMS. The most popular one I found was Paperclipped. After some trail runs with Paperclipped I wasn’t satisfied. I found that it was trying to be too smart for my good. I think my clients need something simple. They just want the ability to upload files and reference them in their web pages. To me that sounds like an web based scp/ftp application. This extension is the first step in that direction.
 
 h1. Getting started
 
